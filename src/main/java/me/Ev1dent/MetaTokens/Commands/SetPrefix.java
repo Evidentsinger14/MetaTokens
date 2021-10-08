@@ -20,10 +20,7 @@ public class SetPrefix implements CommandExecutor {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', newPrefix));
             if (MPrefix.length() > 10 || !MPrefix.matches("[a-zA-Z]")) {
                 player.sendMessage("Your prefix must be less than 10 characters long, cannot contain non-alphanumeric characters.");
-                return true;
             }
-            return false;
-
         }
         return false;
     }

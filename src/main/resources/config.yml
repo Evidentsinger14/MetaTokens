@@ -1,3 +1,5 @@
+include-prefix-additions: true
+include-suffix-additions: true
 Additions:
 #----Characters to add to your prefix----#
   before-prefix: '&7['

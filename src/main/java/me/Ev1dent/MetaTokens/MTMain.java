@@ -15,7 +15,7 @@ public class MTMain extends JavaPlugin {
         getLogger().info("CustomPrefixTokens has been Enabled!");
     }
     @Override
-    public  void onDisable(){
+    public void onDisable(){
         getLogger().info("CustomPrefixTokens has been Disabled!");
     }
 }

@@ -1,6 +1,8 @@
 name: MetaTokens
 main: me.Ev1dent.MetaTokens.MTMain
 version: ${project.version}
+authors: [Ev1dent, Evident#0812 (discord)]
+website: git.ev1dent.me
 commands:
   setprefix:
     description: command to setprefix

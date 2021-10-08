@@ -5,5 +5,5 @@ This plugin is designed to allow players to set Prefixes/Suffixes, based on the 
 * Prefix/Suffix commands
   * Check string against regex list
   * optional additions to be added to the final string
-* console command to add/remove meta tokens.
+* Console command to add/remove meta tokens.
 * Gui to display all set prefixes with option to toggle (Probably not any time soon)

@@ -1,5 +1,10 @@
-name:
-main:
-version:
+name: MetaTokens
+main: me.Ev1dent.MetaTokens.MTMain
+version: ${project.version}
 commands:
-  prefix:
+  setprefix:
+    description: command to setprefix
+  setsuffix:
+    description: command to setsuffix
+  tokens:
+    description: command to see tokens

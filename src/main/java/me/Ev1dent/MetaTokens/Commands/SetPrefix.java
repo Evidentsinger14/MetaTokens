@@ -1,30 +1,29 @@
 package me.Ev1dent.MetaTokens.Commands;
 
-import org.bukkit.ChatColor;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetPrefix implements CommandExecutor {
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
+        //base command /setprefix
         if (label.equalsIgnoreCase("setprefix")) {
-            if (args.length == 0) {
+            if (args.length < 1) {
+                //returns a usage message if no args are specified
                 player.sendMessage("Usage: /SetPrefix CustomPrefix");
+                return true;
             }
             String RawPrefix = args[0];
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', RawPrefix));
-            if (RawPrefix.length() > 10 || !RawPrefix.matches("[a-zA-Z]")) {
-                player.sendMessage("Your prefix must be less than 10 characters long, cannot contain non-alphanumeric characters.");
+            //check if the tag has alphanumeric characters (non 0-9 & a-z)
+            if (RawPrefix.matches("[a-zA-Z]")) {
+                player.sendMessage("Your prefix works!");
             }
+            player.sendMessage("Your prefix Doesn't work!");
+            return true;
         }
         return false;
     }
 }
-
-
-//String MPrefix = UMPrefix.replace("&0", "").replace("&1", "").replace("&2", "").replace("&3", "").replace("&4", "").replace("&5", "").replace("&6", "").replace("&7", "").replace("&8", "").replace("&9", "").replace("&a", "").replace("&b", "").replace("&c", "").replace("&d", "").replace("&e", "").replace("&f", "").replace("&l", "").replace("&k", "").replace("&n", "").replace("&m", "").replace("&o", "").replace("&r", "").replace("[", "").replace("]", "");
-//            String newPrefix = UMPrefix.replace("&k", "").replace("[", "").replace("]", "");
-//

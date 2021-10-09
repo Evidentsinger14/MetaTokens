@@ -7,7 +7,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class SetSuffix implements CommandExecutor {
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         //add booleans for prefix/suffix settings in config.
         Player player = (Player) sender;

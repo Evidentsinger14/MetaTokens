@@ -6,12 +6,15 @@ import me.Ev1dent.MetaTokens.Commands.SetSuffix;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MTMain extends JavaPlugin {
+
+    public static MTMain plugin;
+
     @Override
     public void onEnable() {
+        plugin = this;
         getCommand("setprefix").setExecutor(new SetPrefix());
         getCommand("setsuffix").setExecutor(new SetSuffix());
         getCommand("tokens").setExecutor(new CommandTokens());
-        saveDefaultConfig();
         getLogger().info("CustomPrefixTokens has been Enabled!");
     }
     @Override

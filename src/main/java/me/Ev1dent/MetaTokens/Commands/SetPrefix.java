@@ -12,27 +12,21 @@ import java.util.regex.Pattern;
 public class SetPrefix implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        //base command /setprefix
         if (label.equalsIgnoreCase("setprefix")) {
             if (args.length < 1) {
-                //returns a usage message if no args are specified
-//                int tokenamount = 0;
-                player.sendMessage("Usage: /SetPrefix CustomPrefix");
-                return true;
-            }
-            //Bandit is a fucking dumbass
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aMetaTokens&8]"));
+                return true;}
+
             String RawPrefix = args[0];
-            //start regex check
+            //replaces all colors, and format codes excluding magic with ""
+            String Filtered = RawPrefix.replaceAll("(?i)[§&][0-9A-FL-ORX]", "");
             Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
-            //(?i)[§&][0-9A-FL-ORX]
-            Matcher match = pattern.matcher(RawPrefix);
-            //checks if regex is met
+            //checks Filtered for any a-z, A-Z, or 0-9
+            Matcher match = pattern.matcher(Filtered);
             if (!match.matches()) {
-                player.sendMessage("Your prefix doesn't work!");
-                return true;
-            }
-            player.sendMessage("Your prefix works!");
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', RawPrefix));
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fYour prefix, " + RawPrefix + "&r&f doesn't work!"));
+                return true;}
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fYour prefix, " + RawPrefix + "&r&f works!"));
         }
         return true;
     }

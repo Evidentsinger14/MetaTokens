@@ -2,8 +2,8 @@
 This plugin is designed to allow players to set Prefixes/Suffixes, based on the amount of "tokens" they have.   
 
 ## To do list:
-* Prefix/Suffix commands
-  * ~~Check filtered string against regex list~~
+* Prefix/Suffix commands 
+  * Check filtered string against regex list
   * optional additions to be added to the final string
   * display final prefix to player + confirmation
   * send complete suffix to LP

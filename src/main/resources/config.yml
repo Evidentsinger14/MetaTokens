@@ -1,9 +1,8 @@
+#choose if you want prefix/suffix to have additions.
 include-prefix-additions: true
 include-suffix-additions: true
-Additions:
-#----Characters to add to your prefix----#
-  before-prefix: '&7['
-  after-prefix: '&7] '
-#----Characters to add to your suffix----#
-  before-suffix: ' &7['
-  after-suffix: '&7]'
+#This is the layout of your formatted prefix, and suffix
+prefix-layout: '&7[{META}&7]'
+suffix-layout: '&7[{META}&7]'
+#how many meta tokens should each player start with?
+#starting-amount: 0

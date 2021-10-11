@@ -21,18 +21,24 @@ public class SetSuffix implements CommandExecutor {
             if (args.length < 1) {
                 player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aMetaTokens&8] &fUsage: /setsuffix (Custom Suffix)"));
                 return true;}
-
-            String RawPrefix = args[0];
+            String RawSuffix = args[0];
+            //formats the suffix to include additions
+            String Stage1 = config.getString("suffix-layout");
+            String FormattedSuffix = Stage1.replace("{META}", RawSuffix);
             //replaces all colors, and format codes excluding magic with ""
-            String Filtered = RawPrefix.replaceAll("(?i)[§&][0-9A-FL-ORX]", "");
+            String Filtered = RawSuffix.replaceAll("(?i)[§&][0-9A-FL-ORX]", "");
             Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
             //checks Filtered for any a-z, A-Z, or 0-9
             Matcher match = pattern.matcher(Filtered);
             if (!match.matches()) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fYour prefix, " + RawPrefix + "&r&f doesn't work!"));
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aMetaTokens&8] &fYou cannot use special characters/magic in your suffix."));
                 return true;}
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&fYour prefix, " + RawPrefix + "&r&f works!"));
+            if(config.getBoolean("include-suffix-additions")){
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', FormattedSuffix));
+                return true;
+            }
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', RawSuffix));
         }
-        return true;
+        return false;
     }
 }

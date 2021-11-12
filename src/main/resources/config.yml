@@ -5,4 +5,4 @@ include-suffix-additions: true
 prefix-layout: '&7[{META}&7]'
 suffix-layout: '&7[{META}&7]'
 #how many meta tokens should each player start with?
-#starting-amount: 0
+#starting-amount: 69

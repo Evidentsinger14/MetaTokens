@@ -12,7 +12,7 @@
 
 # - amount of tokens each new player should receive.
 # - WARNING: SETTING TO 1, OR HIGHER WILL ADD ALL NEW PLAYERS TO DATABASE
-starting-amount: 0
+starting-amount: 1
 
 #storage-method: MYSQL
 # - MYSQL is currently the ONLY supported database.

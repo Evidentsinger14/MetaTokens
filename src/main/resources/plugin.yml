@@ -10,3 +10,5 @@ commands:
     description: command to setsuffix
   tokens:
     description: command to see tokens
+  metatokens:
+    description: main plugin command

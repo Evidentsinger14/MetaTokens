@@ -1,8 +1,38 @@
-#choose if you want prefix/suffix to have additions.
-include-prefix-additions: true
-include-suffix-additions: true
-#This is the layout of your formatted prefix, and suffix
-prefix-layout: '&7[{META}&7]'
-suffix-layout: '&7[{META}&7]'
-#how many meta tokens should each player start with?
-#starting-amount: 0
+#     /$$      /$$             /$$            /$$$$$$$$        /$$
+#    | $$$    /$$$            | $$           |__  $$__/       | $$
+#    | $$$$  /$$$$  /$$$$$$  /$$$$$$    /$$$$$$ | $$  /$$$$$$ | $$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
+#    | $$ $$/$$ $$ /$$__  $$|_  $$_/   |____  $$| $$ /$$__  $$| $$  /$$/ /$$__  $$| $$__  $$ /$$_____/
+#    | $$  $$$| $$| $$$$$$$$  | $$      /$$$$$$$| $$| $$  \ $$| $$$$$$/ | $$$$$$$$| $$  \ $$|  $$$$$$
+#    | $$\  $ | $$| $$_____/  | $$ /$$ /$$__  $$| $$| $$  | $$| $$_  $$ | $$_____/| $$  | $$ \____  $$
+#    | $$ \/  | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$|  $$$$$$/| $$ \  $$|  $$$$$$$| $$  | $$ /$$$$$$$/
+#    |__/     |__/ \_______/   \___/   \_______/|__/ \______/ |__/  \__/ \_______/|__/  |__/|_______/
+#------------------------------------------------------------------------------------------------------
+# - https://github.com/Evidentsinger14/MetaTokens
+# - Discord: Evident#0420
+
+# - amount of tokens each new player should receive.
+# - WARNING: SETTING TO 1, OR HIGHER WILL ADD ALL NEW PLAYERS TO DATABASE
+starting-amount: 0
+
+#storage-method: MYSQL
+# - MYSQL is currently the ONLY supported database.
+data:
+  # - connection address for your database.
+  address: localhost
+  # - port for MYSQL (3306 is default)
+  port: 3306
+  # - the name of the database you just created
+  database-name: database
+  # - Credentials for your database.
+  username: root
+  password: ''
+
+# - additions: boolean to decide if you want to have extra bits on your prefix/suffix
+# - layout: the format you would like to be sent to LuckPerms when completed.
+# - DO NOT REMOVE {META} FROM THE LAYOUT.
+prefix:
+  additions: true
+  layout: '&7[{META}&7]'
+suffix:
+  additions: true
+  layout: '&7[{META}&7]'

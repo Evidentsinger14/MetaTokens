@@ -1,6 +1,6 @@
 package me.Ev1dent.MetaTokens;
 
-//import me.Ev1dent.MetaTokens.Commands.CommandReload;
+import me.Ev1dent.MetaTokens.Commands.CommandMetaTokens;
 import me.Ev1dent.MetaTokens.Commands.CommandTokens;
 import me.Ev1dent.MetaTokens.Commands.SetPrefix;
 import me.Ev1dent.MetaTokens.Commands.SetSuffix;
@@ -17,7 +17,7 @@ public class MTMain extends JavaPlugin {
         getCommand("setprefix").setExecutor(new SetPrefix());
         getCommand("setsuffix").setExecutor(new SetSuffix());
         getCommand("tokens").setExecutor(new CommandTokens());
-        //getCommand("mtreload").setExecutor(new CommandReload());
+        getCommand("metatokens").setExecutor(new CommandMetaTokens());
         getLogger().info("CustomPrefixTokens has been Enabled!");
     }
     @Override

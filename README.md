@@ -1,4 +1,4 @@
-#(Incomplete)
+# (Incomplete)
 ## Introduction
 This plugin is designed to allow players to set Prefixes/Suffixes, based on the amount of "tokens" they have.   
 
@@ -14,9 +14,9 @@ This plugin is designed to allow players to set Prefixes/Suffixes, based on the 
 * Add hex support? maybe Gradients?
 
 
-#Command Checklist
+# Command Checklist
 
-##Setprefix and Setsuffix
+## Setprefix and Setsuffix
   * check if blacklisted
     * metatokens.setprefix and metatokens.setsuffix (metatokens.commands)
   * command cooldown
@@ -52,7 +52,7 @@ This plugin is designed to allow players to set Prefixes/Suffixes, based on the 
   * add processed information to a list in config
     * (will use for later when adding gui)
 
-##Tokens
+## Tokens
 (need to update)
-##MetaTokens
+## MetaTokens
 (need to update)

@@ -1,21 +1,22 @@
 package me.Ev1dent.MetaTokens.Commands;
 
-import org.bukkit.ChatColor;
+import me.Ev1dent.MetaTokens.MTMain;
+import me.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
+import org.bukkit.configuration.file.FileConfiguration;
 
 public class CommandTokens implements CommandExecutor {
 
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        Player player = (Player) sender;
-        if(label.equalsIgnoreCase("tokens")) {
-            if (player.hasPermission("cpt.tokens")) {
-                sender.sendMessage(ChatColor.GREEN + "Tokens is working!");
-                return true;
-            }
+    Utils Utils = new Utils();
+    FileConfiguration Config = MTMain.plugin.getConfig();
+
+    public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
+        if (!sender.hasPermission("MetaTokens.MetaTokens")) {
+            sender.sendMessage(Utils.Color(Config.getString("Messages.No-Perms")));
         }
+        sender.sendMessage(Utils.Color("&dYou have permissions!"));
         return false;
     }
 }

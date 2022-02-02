@@ -1,3 +1,4 @@
+#------------------------------------------------------------------------------------------------------
 #     /$$      /$$             /$$            /$$$$$$$$        /$$
 #    | $$$    /$$$            | $$           |__  $$__/       | $$
 #    | $$$$  /$$$$  /$$$$$$  /$$$$$$    /$$$$$$ | $$  /$$$$$$ | $$   /$$  /$$$$$$  /$$$$$$$   /$$$$$$$
@@ -8,14 +9,22 @@
 #    |__/     |__/ \_______/   \___/   \_______/|__/ \______/ |__/  \__/ \_______/|__/  |__/|_______/
 #------------------------------------------------------------------------------------------------------
 # - https://github.com/Evidentsinger14/MetaTokens
-# - Discord: Evident#0420
+# - Discord: Evident#0420 || support.Ev1dent.me
+
+tokens: 1
 
 # - amount of tokens each new player should receive.
 # - WARNING: SETTING TO 1, OR HIGHER WILL ADD ALL NEW PLAYERS TO DATABASE
 starting-amount: 1
 
-#storage-method: MYSQL
+# - The character limit for the tag players can set
+# - NOTE: this does *not* include color codes.
+length: 10
+
+
 # - MYSQL is currently the ONLY supported database.
+#storage-method: MYSQL
+
 data:
   # - connection address for your database.
   address: localhost
@@ -36,3 +45,18 @@ prefix:
 suffix:
   additions: true
   layout: '&7[{META}&7]'
+
+# - Word Filter
+enabled: true
+filter:
+  - Owner
+  - Admin
+  - Moderator
+
+Messages:
+  Usage: '&fUsage: /Set{CMD} (Custom Tag)'
+  Length: '&fThis tag is too long'
+  No-Perms: '&cYou are not authorized to use this command.'
+  Magic: '&fYou cannot use special characters/magic in your tag.'
+  No-Tokens: '&fYou do not have enough tokens to use this command!'
+

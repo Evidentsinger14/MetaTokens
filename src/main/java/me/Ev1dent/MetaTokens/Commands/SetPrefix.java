@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class SetPrefix implements CommandExecutor {
+    //Adds multi-class config support
     FileConfiguration config = MTMain.plugin.getConfig();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

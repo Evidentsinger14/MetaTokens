@@ -1,6 +1,7 @@
 package me.Ev1dent.MetaTokens.Commands;
 
 import me.Ev1dent.MetaTokens.MTMain;
+import me.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,12 +15,13 @@ import java.util.regex.Pattern;
 public class SetSuffix implements CommandExecutor {
     //Adds multi-class config support
     FileConfiguration config = MTMain.plugin.getConfig();
+    Utils Utils = new Utils();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
         if (label.equalsIgnoreCase("setsuffix")) {
             if (args.length < 1) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aMetaTokens&8] &fUsage: /setsuffix (Custom Suffix)"));
+                player.sendMessage(Utils.Color("&8[&aMetaTokens&8] &fUsage: /setsuffix (Custom Suffix)"));
                 return true;}
             String RawSuffix = args[0];
             //formats the suffix to include additions
@@ -31,13 +33,13 @@ public class SetSuffix implements CommandExecutor {
             //checks Filtered for any a-z, A-Z, or 0-9
             Matcher match = pattern.matcher(Filtered);
             if (!match.matches()) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', "&8[&aMetaTokens&8] &fYou cannot use special characters/magic in your suffix."));
+                player.sendMessage(Utils.Color("&8[&aMetaTokens&8] &fYou cannot use special characters/magic in your suffix."));
                 return true;}
             if(config.getBoolean("include-suffix-additions")){
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&', FormattedSuffix));
+                player.sendMessage(Utils.Color(FormattedSuffix));
                 return true;
             }
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', RawSuffix));
+            player.sendMessage(Utils.Color(RawSuffix));
         }
         return false;
     }

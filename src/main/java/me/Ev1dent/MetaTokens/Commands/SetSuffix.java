@@ -17,8 +17,8 @@ public class SetSuffix implements CommandExecutor {
     FileConfiguration Config = MTMain.plugin.getConfig();
     String Prefix = "&8[&aMetaTokens&8] ";
     final int length = Config.getInt("length");
-    String RawUsage = Config.getString("Messages.Usage"), Usage = RawUsage.replace("{CMD}", "Suffix");
-    int tokens = 0;
+    int tokens = Config.getInt("tokens");
+    String RawUsage = Config.getString("Messages.Usage"), Usage = RawUsage.replace("<cmd>", "Suffix");
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -40,20 +40,20 @@ public class SetSuffix implements CommandExecutor {
             return true;
         }
 
-        // Word list (Eventually)
+        // Word list filter ?
 
         // Sets the input to a string
         String Input = args[0];
 
         // This one replaces all codes, except for magic.
-        String NoSymbols = Input.replaceAll("(?i)[§&][0-9A-FL-ORX]", "");
+        String NoSym = Input.replaceAll("(?i)[§&][0-9A-FL-ORX]", "");
 
         // This one replaces *all* codes to check for length.
         String LengthCheck = Input.replaceAll("(?i)[§&][0-9A-FK-ORX]", "");
 
         // This should be Self-Explanatory (The filter makes sure that a-Z and 0-9 are the only characters included)
-        Pattern DoesThisMatch = Pattern.compile("[a-zA-Z0-9]*");
-        Matcher CheckSymbols = DoesThisMatch.matcher(NoSymbols);
+        Pattern RegexFilter = Pattern.compile("[a-zA-Z0-9]*");
+        Matcher CheckSymbols = RegexFilter.matcher(NoSym);
 
         // I guess I should have something to check the length.
         if (LengthCheck.length() > length) {
@@ -63,7 +63,7 @@ public class SetSuffix implements CommandExecutor {
 
         // Do *you* have invalid characters in your prefix? :eyes:
         if (!CheckSymbols.matches()) {
-            sender.sendMessage(Utils.Color(Prefix + Config.getString("Messages.No-Perms")));
+            sender.sendMessage(Utils.Color(Prefix + Config.getString("Messages.Magic")));
             return true;
         }
 
@@ -71,3 +71,5 @@ public class SetSuffix implements CommandExecutor {
         return true;
     }
 }
+
+// See, that's not so bad! Don't hurt me, First actual plugin <3

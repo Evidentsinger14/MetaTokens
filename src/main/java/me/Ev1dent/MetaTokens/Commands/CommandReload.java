@@ -8,8 +8,8 @@ import org.bukkit.command.CommandSender;
 
 public class CommandReload implements CommandExecutor {
     Utils Utils = new Utils();
+    @Override
     public boolean onCommand(CommandSender s, Command cmd, String string, String[] args) {
-
         return false;
     }
 

@@ -1,3 +1,4 @@
+[![](https://jitci.com/gh/Evidentsinger14/Mobnetsv2/svg)](https://jitci.com/gh/Evidentsinger14/Mobnetsv2)
 # (Incomplete)
 ## Introduction
 This plugin is designed to allow players to set Prefixes/Suffixes, based on the amount of "tokens" they have.   

@@ -1,11 +1,10 @@
-package me.Ev1dent.MetaTokens;
+package dev.Ev1dent.MetaTokens;
 
-import me.Ev1dent.MetaTokens.Commands.CommandMetaTokens;
-import me.Ev1dent.MetaTokens.Commands.CommandTokens;
-import me.Ev1dent.MetaTokens.Commands.SetPrefix;
-import me.Ev1dent.MetaTokens.Commands.SetSuffix;
-import me.Ev1dent.MetaTokens.Events.onJoinEvent;
-import me.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.Ev1dent.MetaTokens.Commands.CommandMetaTokens;
+import dev.Ev1dent.MetaTokens.Commands.CommandTokens;
+import dev.Ev1dent.MetaTokens.Commands.SetCommand;
+import dev.Ev1dent.MetaTokens.Events.onJoinEvent;
+import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MTMain extends JavaPlugin {
@@ -27,8 +26,8 @@ public class MTMain extends JavaPlugin {
     }
 
     public void registerCommands(){
-        this.getCommand("setprefix").setExecutor(new SetPrefix());
-        this.getCommand("setsuffix").setExecutor(new SetSuffix());
+        this.getCommand("setprefix").setExecutor(new SetCommand());
+        this.getCommand("setsuffix").setExecutor(new SetCommand());
         this.getCommand("tokens").setExecutor(new CommandTokens());
         this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
     }

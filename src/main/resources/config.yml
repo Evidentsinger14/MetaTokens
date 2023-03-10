@@ -9,9 +9,8 @@
 #    |__/     |__/ \_______/   \___/   \_______/|__/ \______/ |__/  \__/ \_______/|__/  |__/|_______/
 #------------------------------------------------------------------------------------------------------
 # - https://github.com/Evidentsinger14/MetaTokens
-# - Discord: Evident#0420 || support.Ev1dent.me
+# - Discord: Evident#0420 || support.Ev1dent.dev
 
-tokens: 1
 
 # - amount of tokens each new player should receive.
 # - WARNING: SETTING TO 1, OR HIGHER WILL ADD ALL NEW PLAYERS TO DATABASE
@@ -23,12 +22,12 @@ length: 10
 
 # - additions: boolean to decide if you want to have extra bits on your prefix/suffix
 # - layout: the format you would like to be sent to LuckPerms when completed.
-# - DO NOT REMOVE {META} FROM THE LAYOUT.
+# - DO NOT REMOVE {META} FROM THE LAYOUT, OR YOUR PREFIX WILL NOT DISPLAY.
 prefix:
-  additions: true
+  additions: false
   layout: '&7[{META}&7]'
 suffix:
-  additions: true
+  additions: false
   layout: '&7[{META}&7]'
 
 # - Word Filter

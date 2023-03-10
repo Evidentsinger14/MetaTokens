@@ -1,7 +1,7 @@
-package me.Ev1dent.MetaTokens.Events;
+package dev.Ev1dent.MetaTokens.Events;
 
-import me.Ev1dent.MetaTokens.MTMain;
-import me.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.Ev1dent.MetaTokens.MTMain;
+import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

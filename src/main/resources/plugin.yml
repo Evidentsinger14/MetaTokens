@@ -1,14 +1,22 @@
 name: MetaTokens
-main: me.Ev1dent.MetaTokens.MTMain
+main: dev.Ev1dent.MetaTokens.MTMain
 version: ${project.version}
 authors: [Ev1dent, Evident#0812 (discord)]
 website: git.ev1dent.me
 commands:
   setprefix:
-    description: command to setprefix
+    description: set your prefix
+    usage: "/setprefix <prefix>"
   setsuffix:
-    description: command to setsuffix
+    description: set your suffix
+    usage: "/setsuffix <suffix>"
   tokens:
-    description: command to see tokens
+    description: command to see token amount.
   metatokens:
     description: main plugin command
+permissions:
+  metatokens.commands:
+    children:
+      - metatokens.setprefix
+      - metatokens.setsuffix
+    default: true

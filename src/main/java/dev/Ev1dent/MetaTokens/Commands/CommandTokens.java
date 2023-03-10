@@ -1,7 +1,7 @@
-package me.Ev1dent.MetaTokens.Commands;
+package dev.Ev1dent.MetaTokens.Commands;
 
-import me.Ev1dent.MetaTokens.MTMain;
-import me.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.Ev1dent.MetaTokens.MTMain;
+import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

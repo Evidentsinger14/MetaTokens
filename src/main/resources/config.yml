@@ -21,21 +21,6 @@ starting-amount: 1
 # - NOTE: this does *not* include color codes.
 length: 10
 
-
-# - MYSQL is currently the ONLY supported database.
-#storage-method: MYSQL
-
-data:
-  # - connection address for your database.
-  address: localhost
-  # - port for MYSQL (3306 is default)
-  port: 3306
-  # - the name of the database you just created
-  database-name: database
-  # - Credentials for your database.
-  username: root
-  password: ''
-
 # - additions: boolean to decide if you want to have extra bits on your prefix/suffix
 # - layout: the format you would like to be sent to LuckPerms when completed.
 # - DO NOT REMOVE {META} FROM THE LAYOUT.

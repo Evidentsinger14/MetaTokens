@@ -6,14 +6,12 @@ import dev.Ev1dent.MetaTokens.Commands.SetCommand;
 import dev.Ev1dent.MetaTokens.Events.onJoinEvent;
 import dev.Ev1dent.MetaTokens.Utilities.TabCompleter;
 import dev.Ev1dent.MetaTokens.Utilities.Utils;
-import net.luckperms.api.LuckPerms;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MTMain extends JavaPlugin {
 
     Utils Utils = new Utils();
     public static MTMain plugin;
-    private LuckPerms luckPerms;
 
     @Override
     public void onEnable() {

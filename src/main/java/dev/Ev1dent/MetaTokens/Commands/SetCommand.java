@@ -4,6 +4,7 @@ import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.regex.Matcher;
@@ -22,7 +23,6 @@ public class SetCommand implements CommandExecutor {
      */
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        Player player = (Player) sender;
             if (args.length < 1) {
                 return false;
             } else {
@@ -35,7 +35,7 @@ public class SetCommand implements CommandExecutor {
                 Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
                 Matcher match = pattern.matcher(sanatized);
                 if (!match.matches()) {
-                    player.sendMessage(Utils.Color(Utils.Config().getString("Messages.Magic", "&fYou cannot use special characters/magic in your tag.")));
+                    sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.Magic", "&fYou cannot use special characters/magic in your tag.")));
                     return true;
                 } else {
                     switch (command.getName().toLowerCase()){
@@ -44,16 +44,16 @@ public class SetCommand implements CommandExecutor {
                             if(Utils.Config().getBoolean("prefix.additions", true)){
                                 prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                             }
-                            player.sendMessage("Formatted Puffix: " + Utils.Color(prefix));
-                            player.sendMessage("Unformatted Puffix: " + prefix);
+                            sender.sendMessage("Formatted Puffix: " + Utils.Color(prefix));
+                            sender.sendMessage("Unformatted Puffix: " + prefix);
                             break;
                         case "setsuffix":
                             String suffix = args[0];
                             if(Utils.Config().getBoolean("suffix.additions", true)){
                                 suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                             }
-                            player.sendMessage("Formatted Suffix: " + Utils.Color(suffix));
-                            player.sendMessage("Unformatted Suffix: " + suffix);
+                            sender.sendMessage("Formatted Suffix: " + Utils.Color(suffix));
+                            sender.sendMessage("Unformatted Suffix: " + suffix);
                             break;
                     }
                 }

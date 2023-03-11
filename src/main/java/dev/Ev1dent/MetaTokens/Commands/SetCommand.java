@@ -46,11 +46,12 @@ public class SetCommand implements CommandExecutor {
                 String metaValue = user.getCachedData().getMetaData().getMetaValue("MetaTokens_Value");
                 if(metaValue == null){
                     Utils.LogWarn(user + " Has no MetaTokens_Value");
-                }
-                Integer value = Integer.valueOf(metaValue);
-
-                if (value < 1) {
-                    return true;
+                } else {
+                    int value = Integer.parseInt(metaValue);
+                    if (value < 1) {
+                        sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.No-Tokens", "&fYou do not have enough tokens to use this command!")));
+                        return true;
+                    }
                 }
                 // End LuckPerms Stuff
 

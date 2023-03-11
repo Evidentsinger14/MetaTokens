@@ -13,19 +13,16 @@ import java.util.regex.Pattern;
 public class SetCommand implements CommandExecutor {
     Utils Utils = new Utils();
 
-    /*
-        todo
-        Command Cooldowns
-         - configurable
-        Blacklist filter
-         - probably same as EssentialsX nick by default
-        command confirmation
-     */
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
             if (args.length < 1) {
                 return false;
             } else {
+                /*
+                check what LP's meta "MetaTokens_Amount" returns
+                if < 1 return true
+                else continue
+                 */
+
 
                 // Sanitization time!
                 // This removes all allowed colors/formatting
@@ -44,6 +41,7 @@ public class SetCommand implements CommandExecutor {
                             if(Utils.Config().getBoolean("prefix.additions", true)){
                                 prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                             }
+                            // LuckPerms NodeBuilder
                             sender.sendMessage("Formatted Puffix: " + Utils.Color(prefix));
                             sender.sendMessage("Unformatted Puffix: " + prefix);
                             break;
@@ -52,6 +50,7 @@ public class SetCommand implements CommandExecutor {
                             if(Utils.Config().getBoolean("suffix.additions", true)){
                                 suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                             }
+                            // LuckPerms NodeBuilder
                             sender.sendMessage("Formatted Suffix: " + Utils.Color(suffix));
                             sender.sendMessage("Unformatted Suffix: " + suffix);
                             break;

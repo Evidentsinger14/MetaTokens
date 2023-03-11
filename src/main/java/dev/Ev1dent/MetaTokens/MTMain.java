@@ -19,7 +19,7 @@ public class MTMain extends JavaPlugin {
         registerCommands();
         registerEvents();
         saveDefaultConfig();
-
+        Utils.LogInfo("MetaTokens has been loaded!");
     }
     @Override
     public void onDisable(){

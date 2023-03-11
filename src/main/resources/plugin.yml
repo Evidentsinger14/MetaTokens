@@ -3,8 +3,7 @@ main: dev.Ev1dent.MetaTokens.MTMain
 version: ${project.version}
 authors: [Ev1dent, Evident#0812 (discord)]
 website: https://ev1dent.dev
-depend:
-  - LuckPerms
+depend: [ "LuckPerms" ]
 commands:
   setprefix:
     description: set your prefix

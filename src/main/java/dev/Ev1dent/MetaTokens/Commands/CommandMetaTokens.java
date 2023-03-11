@@ -19,7 +19,7 @@ public class CommandMetaTokens implements CommandExecutor {
         }
         switch (args[0].toLowerCase()){
             case "reload":
-                sender.sendMessage("Could not reload.");
+                sender.sendMessage("Could not reload. No reload feature at this moment, searching for a good implementation to preserve comments. Restart your server.");
 //                MTMain.plugin.saveDefaultConfig();
 //                MTMain.plugin.reloadConfig();
 //                sender.sendMessage(Utils.Color("&2Config reloaded"));

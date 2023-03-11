@@ -1,5 +1,6 @@
 package dev.Ev1dent.MetaTokens.Commands;
 
+import dev.Ev1dent.MetaTokens.MTMain;
 import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -28,7 +29,7 @@ public class SetCommand implements CommandExecutor {
                  player = Bukkit.getPlayer(args[1]);
             }
         }
-        int tokens = Utils.getTokens(player);
+        int tokens = MTMain.plugin.getTokens(player);
 
         if(tokens < 1){
             sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.No-Tokens", "&fYou do not have enough tokens to use this command!")));
@@ -52,8 +53,8 @@ public class SetCommand implements CommandExecutor {
                     if (Utils.Config().getBoolean("prefix.additions", true)) {
                         prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    Utils.setTokens(player, --tokens);
-                    Utils.setPrefix(player, prefix);
+                    MTMain.plugin.setTokens(player, --tokens);
+                    MTMain.plugin.setPrefix(player, prefix);
                     break;
 
                 case "setsuffix":
@@ -61,8 +62,8 @@ public class SetCommand implements CommandExecutor {
                     if (Utils.Config().getBoolean("suffix.additions", true)) {
                         suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    Utils.setTokens(player, --tokens);
-                    Utils.setSuffix(player, suffix);
+                    MTMain.plugin.setTokens(player, --tokens);
+                    MTMain.plugin.setSuffix(player, suffix);
                     break;
             }
         }

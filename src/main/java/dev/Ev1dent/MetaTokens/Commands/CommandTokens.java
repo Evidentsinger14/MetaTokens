@@ -1,5 +1,6 @@
 package dev.Ev1dent.MetaTokens.Commands;
 
+import dev.Ev1dent.MetaTokens.MTMain;
 import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +19,7 @@ public class CommandTokens implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        sender.sendMessage("You have " + Utils.getTokens(player) + " Tokens.");
+        sender.sendMessage("You have " + MTMain.plugin.getTokens(player) + " Tokens.");
         return true;
     }
 }

@@ -2,7 +2,9 @@ name: MetaTokens
 main: dev.Ev1dent.MetaTokens.MTMain
 version: ${project.version}
 authors: [Ev1dent, Evident#0812 (discord)]
-website: git.ev1dent.me
+website: https://ev1dent.dev
+depend:
+  - LuckPerms
 commands:
   setprefix:
     description: set your prefix

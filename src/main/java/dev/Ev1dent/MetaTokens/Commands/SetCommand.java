@@ -53,7 +53,7 @@ public class SetCommand implements CommandExecutor {
                     if (Utils.Config().getBoolean("prefix.additions", true)) {
                         prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    MTMain.plugin.setTokens(player, --tokens);
+                    MTMain.plugin.setTokens(player, tokens - 1);
                     MTMain.plugin.setPrefix(player, prefix);
                     break;
 
@@ -62,7 +62,7 @@ public class SetCommand implements CommandExecutor {
                     if (Utils.Config().getBoolean("suffix.additions", true)) {
                         suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    MTMain.plugin.setTokens(player, --tokens);
+                    MTMain.plugin.setTokens(player, tokens - 1);
                     MTMain.plugin.setSuffix(player, suffix);
                     break;
             }

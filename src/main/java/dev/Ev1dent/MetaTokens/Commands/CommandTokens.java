@@ -1,22 +1,24 @@
 package dev.Ev1dent.MetaTokens.Commands;
 
-import dev.Ev1dent.MetaTokens.MTMain;
 import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.command.ConsoleCommandSender;
+import org.bukkit.entity.Player;
 
 public class CommandTokens implements CommandExecutor {
 
     Utils Utils = new Utils();
-    FileConfiguration Config = MTMain.plugin.getConfig();
 
-    public boolean onCommand(final CommandSender sender, final Command command, final String label, final String[] args) {
-        if (!sender.hasPermission("MetaTokens.MetaTokens")) {
-            sender.sendMessage(Utils.Color(Config.getString("Messages.No-Perms")));
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(sender instanceof ConsoleCommandSender){
+            sender.sendMessage("Console cannot have a token amount.");
+            return true;
         }
-        sender.sendMessage(Utils.Color("&dYou have permissions!"));
-        return false;
+
+        Player player = (Player) sender;
+        sender.sendMessage("You have " + Utils.getTokens(player) + " Tokens.");
+        return true;
     }
 }

@@ -28,8 +28,8 @@ public class MTMain extends JavaPlugin {
     }
 
     public void registerCommands(){
-        this.getCommand("setprefix").setExecutor(new SetCommand(this, this.luckPerms));
-        this.getCommand("setsuffix").setExecutor(new SetCommand(this, this.luckPerms));
+        this.getCommand("setprefix").setExecutor(new SetCommand());
+        this.getCommand("setsuffix").setExecutor(new SetCommand());
         this.getCommand("tokens").setExecutor(new CommandTokens());
         this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
     }

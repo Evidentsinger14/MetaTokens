@@ -57,13 +57,13 @@ public class MTMain extends JavaPlugin {
 
     public int getTokens(Player player) {
         CachedMetaData metaData = luckPerms.getPlayerAdapter(Player.class).getMetaData(player);
-        return metaData.getMetaValue("MetaTokens", Integer::parseInt).orElse(0);
+        return metaData.getMetaValue("metatokens", Integer::parseInt).orElse(0);
     }
 
     public void setTokens(Player player, int MetaTokens) {
         User user = luckPerms.getPlayerAdapter(Player.class).getUser(player);
-        MetaNode node = MetaNode.builder("MetaTokens", Integer.toString(MetaTokens)).build();
-        user.data().clear(NodeType.META.predicate(mn -> mn.getMetaKey().equals("MetaTokens")));
+        MetaNode node = MetaNode.builder("metatokens", Integer.toString(MetaTokens)).build();
+        user.data().clear(NodeType.META.predicate(mn -> mn.getMetaKey().equals("metatokens")));
         user.data().add(node);
         luckPerms.getUserManager().saveUser(user);
     }
@@ -86,7 +86,7 @@ public class MTMain extends JavaPlugin {
         this.luckPerms.getUserManager().modifyUser(player.getUniqueId(), (User user) -> {
             // checks weight of existing suffixes
             Map<Integer, String> currentSuffixes = user.getCachedData().getMetaData(QueryOptions.nonContextual()).getSuffixes();
-            int priority = currentSuffixes.keySet().stream().mapToInt(i -> i + 10).max().orElse(1000);
+            int priority = currentSuffixes.keySet().stream().mapToInt(i -> i + 1000).max().orElse(1000);
 
             // Creates a node to be added to player.
             Node node = SuffixNode.builder(suffix, priority).build();

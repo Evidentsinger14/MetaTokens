@@ -9,16 +9,23 @@ commands:
   setprefix:
     description: set your prefix
     usage: "/setprefix <prefix>"
+    permission: metatokens.setprefix
   setsuffix:
     description: set your suffix
     usage: "/setsuffix <suffix>"
+    permission: metatokens.setsuffix
   tokens:
     description: command to see token amount.
+    permission: metatokens.tokens
   metatokens:
     description: main plugin command
+    permission: metatokens.metatokens
 permissions:
   metatokens.commands:
     children:
       - metatokens.setprefix
       - metatokens.setsuffix
+      - metatokens.tokens
     default: true
+  metatokens.metatokens:
+    default: op

@@ -4,6 +4,7 @@ import dev.Ev1dent.MetaTokens.Commands.CommandMetaTokens;
 import dev.Ev1dent.MetaTokens.Commands.CommandTokens;
 import dev.Ev1dent.MetaTokens.Commands.SetCommand;
 import dev.Ev1dent.MetaTokens.Events.onJoinEvent;
+import dev.Ev1dent.MetaTokens.Utilities.TabCompleter;
 import dev.Ev1dent.MetaTokens.Utilities.Utils;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -37,4 +38,9 @@ public class MTMain extends JavaPlugin {
     public void registerEvents(){
         this.getServer().getPluginManager().registerEvents(new onJoinEvent(), this);
     }
+
+    public void addTabCompletion() {
+        this.getCommand("metatokens").setTabCompleter(new TabCompleter());
+    }
+
 }

@@ -4,12 +4,18 @@ import dev.Ev1dent.MetaTokens.MTMain;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import net.luckperms.api.model.user.User;
+import net.luckperms.api.node.Node;
 import net.luckperms.api.node.NodeType;
 import net.luckperms.api.node.types.MetaNode;
+import net.luckperms.api.node.types.PrefixNode;
+import net.luckperms.api.node.types.SuffixNode;
+import net.luckperms.api.query.QueryOptions;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
+
+import java.util.Map;
 
 public class Utils {
 
@@ -51,10 +57,31 @@ public class Utils {
     }
 
     public void setPrefix(Player player, String prefix){
+        this.luckPerms.getUserManager().modifyUser(player.getUniqueId(), (User user) -> {
+            // checks weight of existing prefixes
+            Map<Integer, String> currentPrefixes = user.getCachedData().getMetaData(QueryOptions.nonContextual()).getPrefixes();
+            int priority = currentPrefixes.keySet().stream().mapToInt(i -> i + 10).max().orElse(1000);
 
+            // Creates a node to be added to player.
+            Node node = PrefixNode.builder(prefix, priority).build();
+            // adds the node
+            user.data().add(node);
+            player.sendMessage("You have successfully received the prefix: " + prefix);
+        });
     }
-    public void setSuffix(Player player, String suffix){
 
+    public void setSuffix(Player player, String suffix){
+        this.luckPerms.getUserManager().modifyUser(player.getUniqueId(), (User user) -> {
+            // checks weight of existing suffixes
+            Map<Integer, String> currentSuffixes = user.getCachedData().getMetaData(QueryOptions.nonContextual()).getSuffixes();
+            int priority = currentSuffixes.keySet().stream().mapToInt(i -> i + 10).max().orElse(1000);
+
+            // Creates a node to be added to player.
+            Node node = SuffixNode.builder(suffix, priority).build();
+            // adds the node
+            user.data().add(node);
+            player.sendMessage("You have successfully received the suffix: " + suffix);
+        });
     }
 
 }

@@ -53,7 +53,7 @@ public class SetCommand implements CommandExecutor {
                         prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
                     Utils.setTokens(player, --tokens);
-                    // set the prefix in LP
+                    Utils.setPrefix(player, prefix);
                     break;
 
                 case "setsuffix":
@@ -62,7 +62,7 @@ public class SetCommand implements CommandExecutor {
                         suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
                     Utils.setTokens(player, --tokens);
-                    // set the suffix in LP
+                    Utils.setSuffix(player, suffix);
                     break;
             }
         }

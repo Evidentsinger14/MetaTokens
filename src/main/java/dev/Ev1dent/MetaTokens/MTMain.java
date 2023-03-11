@@ -79,6 +79,7 @@ public class MTMain extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the prefix: " + prefix);
+            player.sendMessage("You have " + MTMain.plugin.getTokens(player) + "Tokens left.");
         });
     }
 
@@ -93,6 +94,7 @@ public class MTMain extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the suffix: " + suffix);
+            player.sendMessage("You have " + MTMain.plugin.getTokens(player) + "Tokens left.");
         });
     }
 

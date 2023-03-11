@@ -20,8 +20,7 @@ public class SetCommand implements CommandExecutor {
         if (args.length < 1) {
             return false;
         }
-
-        Player player = (Player) sender;
+        Player player;
         if (sender instanceof ConsoleCommandSender) {
             if (args.length < 2) {
                 sender.sendMessage("Please specify a player.");
@@ -29,6 +28,7 @@ public class SetCommand implements CommandExecutor {
                  player = Bukkit.getPlayer(args[1]);
             }
         }
+        player = (Player) sender;
         int tokens = MTMain.plugin.getTokens(player);
 
         if(tokens < 1){

@@ -58,6 +58,6 @@ public class SetCommand implements CommandExecutor {
                     }
                 }
             }
-        return false;
+        return true;
     }
 }

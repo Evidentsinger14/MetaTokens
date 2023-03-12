@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 public class CommandMetaTokens implements CommandExecutor {
-    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    Utils Utils = new Utils();
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {

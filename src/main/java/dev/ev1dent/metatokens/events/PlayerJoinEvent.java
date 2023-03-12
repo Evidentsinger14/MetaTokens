@@ -6,7 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
 public class PlayerJoinEvent implements Listener {
-    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    Utils Utils = new Utils();
 
     @EventHandler
     public void onJoin(org.bukkit.event.player.PlayerJoinEvent e) {

@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class MetaTokensPlugin extends JavaPlugin {
 
-    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    Utils Utils = new Utils();
     public static MetaTokensPlugin plugin;
     private LuckPerms luckPerms;
 

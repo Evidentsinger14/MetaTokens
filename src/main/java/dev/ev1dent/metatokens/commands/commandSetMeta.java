@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class commandSetMeta implements CommandExecutor {
-    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    Utils Utils = new Utils();
 
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

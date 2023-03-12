@@ -1,13 +1,14 @@
-package dev.Ev1dent.MetaTokens.Commands;
+package dev.ev1dent.metatokens.commands;
 
-import dev.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.ev1dent.metatokens.utilities.utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 
-public class CommandReload implements CommandExecutor {
-    Utils Utils = new Utils();
+public class commandReload implements CommandExecutor {
+    utils Utils = new utils();
+
     @Override
     public boolean onCommand(CommandSender s, Command cmd, String string, String[] args) {
         return false;

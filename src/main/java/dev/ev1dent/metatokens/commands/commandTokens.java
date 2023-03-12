@@ -1,25 +1,25 @@
-package dev.Ev1dent.MetaTokens.Commands;
+package dev.ev1dent.metatokens.commands;
 
-import dev.Ev1dent.MetaTokens.MTMain;
-import dev.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.ev1dent.metatokens.metaTokensPlugin;
+import dev.ev1dent.metatokens.utilities.utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandTokens implements CommandExecutor {
+public class commandTokens implements CommandExecutor {
 
-    Utils Utils = new Utils();
+    utils Utils = new utils();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if(sender instanceof ConsoleCommandSender){
+        if (sender instanceof ConsoleCommandSender) {
             sender.sendMessage("Console cannot have a token amount.");
             return true;
         }
 
         Player player = (Player) sender;
-        sender.sendMessage("You have " + MTMain.plugin.getTokens(player) + " Tokens.");
+        sender.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens.");
         return true;
     }
 }

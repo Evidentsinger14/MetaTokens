@@ -1,11 +1,11 @@
-package dev.Ev1dent.MetaTokens;
+package dev.ev1dent.metatokens;
 
-import dev.Ev1dent.MetaTokens.Commands.CommandMetaTokens;
-import dev.Ev1dent.MetaTokens.Commands.CommandTokens;
-import dev.Ev1dent.MetaTokens.Commands.SetCommand;
-import dev.Ev1dent.MetaTokens.Events.onJoinEvent;
-import dev.Ev1dent.MetaTokens.Utilities.TabCompleter;
-import dev.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.ev1dent.metatokens.commands.commandMetaTokens;
+import dev.ev1dent.metatokens.commands.commandTokens;
+import dev.ev1dent.metatokens.commands.commandSetMeta;
+import dev.ev1dent.metatokens.events.onJoinEvent;
+import dev.ev1dent.metatokens.utilities.tabCompletion;
+import dev.ev1dent.metatokens.utilities.utils;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import net.luckperms.api.model.user.User;
@@ -20,10 +20,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;
 
-public class MTMain extends JavaPlugin {
+public class metaTokensPlugin extends JavaPlugin {
 
-    Utils Utils = new Utils();
-    public static MTMain plugin;
+    utils Utils = new utils();
+    public static metaTokensPlugin plugin;
     private LuckPerms luckPerms;
 
     @Override
@@ -35,24 +35,25 @@ public class MTMain extends JavaPlugin {
         saveDefaultConfig();
         Utils.LogInfo("MetaTokens has been loaded!");
     }
+
     @Override
-    public void onDisable(){
+    public void onDisable() {
         Utils.LogInfo("MetaTokens has been Disabled!");
     }
 
-    public void registerCommands(){
-        this.getCommand("setprefix").setExecutor(new SetCommand());
-        this.getCommand("setsuffix").setExecutor(new SetCommand());
-        this.getCommand("tokens").setExecutor(new CommandTokens());
-        this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
+    public void registerCommands() {
+        this.getCommand("setprefix").setExecutor(new commandSetMeta());
+        this.getCommand("setsuffix").setExecutor(new commandSetMeta());
+        this.getCommand("tokens").setExecutor(new commandTokens());
+        this.getCommand("metatokens").setExecutor(new commandMetaTokens());
     }
 
-    public void registerEvents(){
+    public void registerEvents() {
         this.getServer().getPluginManager().registerEvents(new onJoinEvent(), this);
     }
 
     public void addTabCompletion() {
-        this.getCommand("metatokens").setTabCompleter(new TabCompleter());
+        this.getCommand("metatokens").setTabCompleter(new tabCompletion());
     }
 
     public int getTokens(Player player) {
@@ -79,7 +80,7 @@ public class MTMain extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the prefix: " + prefix);
-            player.sendMessage("You have " + MTMain.plugin.getTokens(player) + " Tokens left.");
+            player.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
         });
     }
 
@@ -94,7 +95,7 @@ public class MTMain extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the suffix: " + suffix);
-            player.sendMessage("You have " + MTMain.plugin.getTokens(player) + " Tokens left.");
+            player.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
         });
     }
 

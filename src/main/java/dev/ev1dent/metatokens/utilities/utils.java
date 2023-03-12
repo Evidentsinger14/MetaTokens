@@ -1,11 +1,11 @@
-package dev.Ev1dent.MetaTokens.Utilities;
+package dev.ev1dent.metatokens.utilities;
 
-import dev.Ev1dent.MetaTokens.MTMain;
+import dev.ev1dent.metatokens.metaTokensPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 
-public class Utils {
+public class utils {
 
     // Allows me to be lazy, and use colors cleanly. :)
     public String Color(String s) {
@@ -26,7 +26,7 @@ public class Utils {
     }
 
     public FileConfiguration Config() {
-        return MTMain.plugin.getConfig();
+        return metaTokensPlugin.plugin.getConfig();
     }
 
 }

@@ -1,13 +1,13 @@
-package dev.Ev1dent.MetaTokens.Events;
+package dev.ev1dent.metatokens.events;
 
-import dev.Ev1dent.MetaTokens.Utilities.Utils;
+import dev.ev1dent.metatokens.utilities.utils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 public class onJoinEvent implements Listener {
-    Utils Utils = new Utils();
+    utils Utils = new utils();
 
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {

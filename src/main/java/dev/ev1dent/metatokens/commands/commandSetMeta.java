@@ -1,7 +1,7 @@
 package dev.ev1dent.metatokens.commands;
 
-import dev.ev1dent.metatokens.metaTokensPlugin;
-import dev.ev1dent.metatokens.utilities.utils;
+import dev.ev1dent.metatokens.MetaTokensPlugin;
+import dev.ev1dent.metatokens.utilities.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class commandSetMeta implements CommandExecutor {
-    utils Utils = new utils();
+    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
 
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -29,7 +29,7 @@ public class commandSetMeta implements CommandExecutor {
             }
         }
         player = (Player) sender;
-        int tokens = metaTokensPlugin.plugin.getTokens(player);
+        int tokens = MetaTokensPlugin.plugin.getTokens(player);
 
         if (tokens < 1) {
             sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.No-Tokens", "&fYou do not have enough tokens to use this command!")));
@@ -53,8 +53,8 @@ public class commandSetMeta implements CommandExecutor {
                     if (Utils.Config().getBoolean("prefix.additions", true)) {
                         prefix = Utils.Config().getString("prefix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    metaTokensPlugin.plugin.setTokens(player, tokens - 1);
-                    metaTokensPlugin.plugin.setPrefix(player, prefix);
+                    MetaTokensPlugin.plugin.setTokens(player, tokens - 1);
+                    MetaTokensPlugin.plugin.setPrefix(player, prefix);
                     break;
 
                 case "setsuffix":
@@ -62,8 +62,8 @@ public class commandSetMeta implements CommandExecutor {
                     if (Utils.Config().getBoolean("suffix.additions", true)) {
                         suffix = Utils.Config().getString("suffix.layout", "&7[{META}&7]").replace("{META}", args[0]);
                     }
-                    metaTokensPlugin.plugin.setTokens(player, tokens - 1);
-                    metaTokensPlugin.plugin.setSuffix(player, suffix);
+                    MetaTokensPlugin.plugin.setTokens(player, tokens - 1);
+                    MetaTokensPlugin.plugin.setSuffix(player, suffix);
                     break;
             }
         }

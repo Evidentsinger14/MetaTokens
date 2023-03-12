@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-public class tabCompletion implements org.bukkit.command.TabCompleter {
+public class TabCompletion implements org.bukkit.command.TabCompleter {
     private final String[] mtArguments = {"reload", "version"};
     private final String[] setPrefixArgs = {"<prefix>", ""};
     private final String[] setSuffixArgs = {"<suffix>", ""};

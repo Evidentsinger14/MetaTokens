@@ -1,11 +1,11 @@
 package dev.ev1dent.metatokens;
 
-import dev.ev1dent.metatokens.commands.commandMetaTokens;
+import dev.ev1dent.metatokens.commands.CommandMetaTokens;
 import dev.ev1dent.metatokens.commands.commandTokens;
 import dev.ev1dent.metatokens.commands.commandSetMeta;
-import dev.ev1dent.metatokens.events.onJoinEvent;
-import dev.ev1dent.metatokens.utilities.tabCompletion;
-import dev.ev1dent.metatokens.utilities.utils;
+import dev.ev1dent.metatokens.events.PlayerJoinEvent;
+import dev.ev1dent.metatokens.utilities.TabCompletion;
+import dev.ev1dent.metatokens.utilities.Utils;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.cacheddata.CachedMetaData;
 import net.luckperms.api.model.user.User;
@@ -20,10 +20,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Map;
 
-public class metaTokensPlugin extends JavaPlugin {
+public class MetaTokensPlugin extends JavaPlugin {
 
-    utils Utils = new utils();
-    public static metaTokensPlugin plugin;
+    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    public static MetaTokensPlugin plugin;
     private LuckPerms luckPerms;
 
     @Override
@@ -45,15 +45,15 @@ public class metaTokensPlugin extends JavaPlugin {
         this.getCommand("setprefix").setExecutor(new commandSetMeta());
         this.getCommand("setsuffix").setExecutor(new commandSetMeta());
         this.getCommand("tokens").setExecutor(new commandTokens());
-        this.getCommand("metatokens").setExecutor(new commandMetaTokens());
+        this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
     }
 
     public void registerEvents() {
-        this.getServer().getPluginManager().registerEvents(new onJoinEvent(), this);
+        this.getServer().getPluginManager().registerEvents(new PlayerJoinEvent(), this);
     }
 
     public void addTabCompletion() {
-        this.getCommand("metatokens").setTabCompleter(new tabCompletion());
+        this.getCommand("metatokens").setTabCompleter(new TabCompletion());
     }
 
     public int getTokens(Player player) {
@@ -80,7 +80,7 @@ public class metaTokensPlugin extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the prefix: " + prefix);
-            player.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
+            player.sendMessage("You have " + MetaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
         });
     }
 
@@ -95,7 +95,7 @@ public class metaTokensPlugin extends JavaPlugin {
             // adds the node
             user.data().add(node);
             player.sendMessage("You have successfully received the suffix: " + suffix);
-            player.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
+            player.sendMessage("You have " + MetaTokensPlugin.plugin.getTokens(player) + " Tokens left.");
         });
     }
 

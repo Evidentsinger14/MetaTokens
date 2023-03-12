@@ -1,7 +1,7 @@
 package dev.ev1dent.metatokens.commands;
 
-import dev.ev1dent.metatokens.metaTokensPlugin;
-import dev.ev1dent.metatokens.utilities.utils;
+import dev.ev1dent.metatokens.MetaTokensPlugin;
+import dev.ev1dent.metatokens.utilities.Utils;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 public class commandTokens implements CommandExecutor {
 
-    utils Utils = new utils();
+    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
@@ -19,7 +19,7 @@ public class commandTokens implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        sender.sendMessage("You have " + metaTokensPlugin.plugin.getTokens(player) + " Tokens.");
+        sender.sendMessage("You have " + MetaTokensPlugin.plugin.getTokens(player) + " Tokens.");
         return true;
     }
 }

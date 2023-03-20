@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 public class CommandTokens implements CommandExecutor {
 
-    dev.ev1dent.metatokens.utilities.Utils Utils = new Utils();
+    Utils Utils = new Utils();
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
@@ -19,7 +19,7 @@ public class CommandTokens implements CommandExecutor {
         }
 
         Player player = (Player) sender;
-        sender.sendMessage("You have " + MetaTokensPlugin.plugin.getTokens(player) + " Tokens.");
+        sender.sendMessage(Utils.Color("&fYou have " + MetaTokensPlugin.plugin.getTokens(player) + " Tokens."));
         return true;
     }
 }

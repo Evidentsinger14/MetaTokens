@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandTokenss implements CommandExecutor {
+public class CommandTokens implements CommandExecutor {
 
     Utils Utils = new Utils();
 

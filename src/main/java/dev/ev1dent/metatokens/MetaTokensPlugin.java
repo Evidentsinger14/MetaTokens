@@ -1,8 +1,8 @@
 package dev.ev1dent.metatokens;
 
 import dev.ev1dent.metatokens.commands.CommandMetaTokens;
-import dev.ev1dent.metatokens.commands.CommandTokenss;
-import dev.ev1dent.metatokens.commands.CommandSetMetaa;
+import dev.ev1dent.metatokens.commands.CommandTokens;
+import dev.ev1dent.metatokens.commands.CommandSetMeta;
 import dev.ev1dent.metatokens.events.PlayerJoinEvent;
 import dev.ev1dent.metatokens.utilities.TabCompletion;
 import dev.ev1dent.metatokens.utilities.Utils;
@@ -42,9 +42,9 @@ public class MetaTokensPlugin extends JavaPlugin {
     }
 
     public void registerCommands() {
-        this.getCommand("setprefix").setExecutor(new CommandSetMetaa());
-        this.getCommand("setsuffix").setExecutor(new CommandSetMetaa());
-        this.getCommand("tokens").setExecutor(new CommandTokenss());
+        this.getCommand("setprefix").setExecutor(new CommandSetMeta());
+        this.getCommand("setsuffix").setExecutor(new CommandSetMeta());
+        this.getCommand("tokens").setExecutor(new CommandTokens());
         this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
     }
 

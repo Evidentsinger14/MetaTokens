@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class commandSetMeta implements CommandExecutor {
+public class CommandSetMeta implements CommandExecutor {
     Utils Utils = new Utils();
 
 

@@ -1,4 +1,4 @@
-[![Build Status](https://ci.ev1dent.dev/buildStatus/icon?job=MetaTokens)](https://ci.ev1dent.dev/job/MetaTokens/)
+[![Build Status](https://ci.ev1dent.dev/job/MetaTokens/badge/icon)](https://ci.ev1dent.dev/job/MetaTokens/)
 # (Incomplete)
 ## Introduction
 This plugin is designed to allow players to set Prefixes/Suffixes, based on the amount of "tokens" they have.   

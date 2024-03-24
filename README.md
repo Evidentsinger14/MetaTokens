@@ -1,4 +1,4 @@
-[![](https://jitci.com/gh/Evidentsinger14/MetaTokens/svg)](https://jitci.com/gh/Evidentsinger14/MetaTokens)
+[![](https://ci.ev1dent.dev/job/PermissionPurge/badge/icon)](https://ci.ev1dent.dev/job/PermissionPurge/)
 # (Incomplete)
 ## Introduction
 This plugin is designed to allow players to set Prefixes/Suffixes, based on the amount of "tokens" they have.   

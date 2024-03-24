@@ -8,6 +8,8 @@ import dev.ev1dent.metatokens.utilities.TabCompletion;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class MetaTokensPlugin extends JavaPlugin {
 
     public static MetaTokensPlugin plugin;
@@ -27,10 +29,10 @@ public class MetaTokensPlugin extends JavaPlugin {
     }
 
     public void registerCommands() {
-        this.getCommand("setprefix").setExecutor(new CommandSetMeta(luckPerms));
-        this.getCommand("setsuffix").setExecutor(new CommandSetMeta(luckPerms));
-        this.getCommand("tokens").setExecutor(new CommandTokens());
-        this.getCommand("metatokens").setExecutor(new CommandMetaTokens());
+        Objects.requireNonNull(this.getCommand("setprefix")).setExecutor(new CommandSetMeta(luckPerms));
+        Objects.requireNonNull(this.getCommand("setsuffix")).setExecutor(new CommandSetMeta(luckPerms));
+        Objects.requireNonNull(this.getCommand("tokens")).setExecutor(new CommandTokens());
+        Objects.requireNonNull(this.getCommand("metatokens")).setExecutor(new CommandMetaTokens());
         addTabCompletion();
     }
 
@@ -39,7 +41,7 @@ public class MetaTokensPlugin extends JavaPlugin {
     }
 
     public void addTabCompletion() {
-        this.getCommand("metatokens").setTabCompleter(new TabCompletion());
+        Objects.requireNonNull(this.getCommand("metatokens")).setTabCompleter(new TabCompletion());
     }
 
 }

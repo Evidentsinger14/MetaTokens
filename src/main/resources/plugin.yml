@@ -1,6 +1,6 @@
 name: MetaTokens
 main: dev.Ev1dent.MetaTokens.MTMain
-version: ${project.version}
+version: 1.0.0
 authors: [Ev1dent, Evident#0812 (discord)]
 website: https://ev1dent.dev
 depend: [ "LuckPerms" ]

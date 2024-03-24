@@ -43,10 +43,7 @@ public class CommandSetMeta implements CommandExecutor {
         // "Does this contain anything it shouldn't?"
         Pattern pattern = Pattern.compile("[a-zA-Z0-9]*");
         Matcher match = pattern.matcher(sanitized);
-        if (!match.matches()) {
-            sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.Magic", "&fYou cannot use special characters/magic in your tag.")));
-            return true;
-        } else {
+        if (match.matches()) {
             switch (command.getName().toLowerCase()) {
                 case "setprefix":
                     String prefix = args[0];
@@ -66,6 +63,9 @@ public class CommandSetMeta implements CommandExecutor {
                     MetaTokensPlugin.plugin.setSuffix(player, suffix);
                     break;
             }
+        } else {
+            sender.sendMessage(Utils.Color(Utils.Config().getString("Messages.Magic", "&fYou cannot use special characters/magic in your tag.")));
+            return true;
         }
         return true;
     }

@@ -1,8 +1,6 @@
 package dev.ev1dent.metatokens.commands;
 
-import dev.ev1dent.metatokens.MetaTokensPlugin;
 import dev.ev1dent.metatokens.utilities.Utils;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,26 +11,22 @@ public class CommandMetaTokens implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String s, String[] args) {
         if (args.length == 0) {
-            sender.sendMessage(Utils.Color("              &6&lMetaTokens             "));
-            sender.sendMessage(Utils.Color("&m                                       "));
-            sender.sendMessage(Utils.Color("&eThis server is running &a&nMetaTokens &av" + MetaTokensPlugin.plugin.getDescription().getVersion()));
-            sender.sendMessage(Utils.Color("&e- &6Bukkit Version: " + Bukkit.getVersion()));
+            Utils.sendAdminMessage(sender, "              <green><bold>MetaTokens</bold></green>             ");
+            Utils.sendAdminMessage(sender, "<strikethrough>                                            </strikethrough>");
+            Utils.sendAdminMessage(sender, "<yellow>- <green>MetaTokens Version: v" + Utils.getPluginVersion());
+            Utils.sendAdminMessage(sender, "<yellow>- <green>Bukkit Version: " + Utils.getServerVersion());
         }
         switch (args[0].toLowerCase()) {
             case "reload":
-                sender.sendMessage("Could not reload. No reload feature at this moment, searching for a good implementation to preserve comments. Restart your server.");
-//                MTMain.plugin.saveDefaultConfig();
-//                MTMain.plugin.reloadConfig();
-//                sender.sendMessage(Utils.Color("&2Config reloaded"));
-//                MTMain.plugin.addTabCompletion();
+                Utils.sendPlayerMessage(sender, "Reload command not implemented. Restart your server to apply changes.");
                 break;
 
             case "version":
-                sender.sendMessage("v" + MetaTokensPlugin.plugin.getDescription().getVersion());
+                Utils.sendPlayerMessage(sender, String.format("v%s", Utils.getPluginVersion()));
                 break;
 
             default:
-                sender.sendMessage("/<command> [reload/version]");
+                Utils.sendPlayerMessage(sender, "/<command> [reload/version]");
                 break;
         }
         return false;
